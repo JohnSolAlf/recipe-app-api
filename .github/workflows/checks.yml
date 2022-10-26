@@ -8,15 +8,13 @@ jobs:
     name: Test and Lint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
       - name: Login to Docker Hub
         uses: docker/build-push-action@v1
         with:
           username: ${{ secrets.DOCKERHUB_USER }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-          tag_with_ref: true
-          tag_with_sha: true
-          tags: ${{ github.sha}}
+          repository: seesharprun/next
+          tags: latest, ${{ github.run_number }}
       - name: Checkout
         uses: actions/checkout@v2
       - name: Test
