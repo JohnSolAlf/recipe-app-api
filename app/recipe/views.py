@@ -1,7 +1,6 @@
-""""
+"""
 Views for the recipe APIs
 """
-from tokenize import Token
 from rest_framework import (
     viewsets,
     mixins,
@@ -39,7 +38,8 @@ class RecipeViewSet(viewsets.ModelViewSet):
         serializer.save(user=self.request.user)
 
 
-class TagViewSet(mixins.DestroyModelMixin, mixins.UpdateModelMixin,
+class TagViewSet(mixins.DestroyModelMixin,
+                 mixins.UpdateModelMixin,
                  mixins.ListModelMixin,
                  viewsets.GenericViewSet):
     """Manage tags in the database."""
