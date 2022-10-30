@@ -40,7 +40,7 @@ class PublicIngredientsApiTests(TestCase):
 
 
 class PrivateIngredientsApiTests(TestCase):
-    """test unauthenticated API requests."""
+    """test authenticated API requests."""
 
     def setUp(self):
         self.user = create_user()
