@@ -1,7 +1,6 @@
 """
 Views for the recipe APIs
 """
-from lib2to3.pgen2.token import STRING
 from drf_spectacular.utils import (
     extend_schema_view,
     extend_schema,
@@ -38,7 +37,7 @@ from recipe import serializers
                 'ingredients',
                 OpenApiTypes.STR,
                 description='Comma separated list of ingredient IDs to filter',
-            )
+            ),
         ]
     )
 )
@@ -102,7 +101,7 @@ class RecipeViewSet(viewsets.ModelViewSet):
                 'assigned_only',
                 OpenApiTypes.INT, enum=[0, 1],
                 description='Filter by items assigned to recipes.',
-            )
+            ),
         ]
     )
 )
